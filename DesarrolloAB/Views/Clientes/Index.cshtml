@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DesarrolloAB.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSucursal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaActualizacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCreación)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPersona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSucursal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaActualizacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCreación)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdClientes }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdClientes }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdClientes })
+        </td>
+    </tr>
+}
+
+</table>
